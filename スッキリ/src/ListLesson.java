@@ -4,7 +4,7 @@ import java.util.Objects;
 public class ListLesson {
 
 	public static void main(String[] args) {
-		//動的な配列を扱う場合
+		//動的配列
 		ArrayList<String> names = new ArrayList<String>(); //ArrayList<String> names = new ArrayList<>(); vr1.8は省略できる＜＞
 		names.add("Jhon");
 		names.add("Paul");
@@ -26,8 +26,6 @@ public class ListLesson {
 		for(String name:names) {  //拡張for文
 			System.out.println(name);
 		}
-		ArrayList <Integer> nums= new ArrayList<>();
-		
 		/*
 		 * Wrapper Class(ラッパークラス)
 		 * int -> Integer
@@ -35,7 +33,7 @@ public class ListLesson {
 		 * boolean -> Boolean
 		 * char -> Character
 		 * */
-		
+		ArrayList <Integer> nums= new ArrayList<>();
 		nums.add(100);
 		nums.add(200);
 		for(int i :nums) {
@@ -68,7 +66,6 @@ public class ListLesson {
 		
 		
 		ArrayList <Fruits> list = new ArrayList<>();
-		
 		list.add(new Fruits("ばなな",50));
 		list.add(new Fruits("いちご",500));
 		list.add(new Fruits("りんご",100));
@@ -90,8 +87,8 @@ public class ListLesson {
 		list.clear();
 		System.out.println(list.size()); //0
 	}
-
 }
+
 class Fruits{
 	String name;
 	int price;
@@ -99,25 +96,12 @@ class Fruits{
 		this.name = name;
 		this.price = price;
 	}
+	
 	@Override
 	public String toString() {
 		return String.format("フルーツ名：%s,価格：%d",this.name, this.price);
 	}
-	/*
-	@Override
-	public boolean equals(Object obj) {
-		if(this == obj) {
-			return true;
-		}
-		if(obj instanceof Fruits) {
-			Fruits f = (Fruits)obj;
-			if(f.name.equals(this.name) && f.price == this.price) {
-				return true;
-			}
-		}
-		return false;
-	}
-	*/
+	
 	@Override
 	public int hashCode() {
 		return Objects.hash(name, price);
@@ -132,23 +116,22 @@ class Fruits{
 			return false;
 		Fruits other = (Fruits) obj;
 		return Objects.equals(name, other.name) && price == other.price;
+		
+		
+/*
+	@Override
+	public boolean equals(Object obj) {
+		if(this == obj) {
+			return true;
+		}
+		if(obj instanceof Fruits) {
+			Fruits f = (Fruits)obj;
+			if(f.name.equals(this.name) && f.price == this.price) {
+				return true;
+			}
+		}
+		return false;
 	}
-	
+*/
+	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
