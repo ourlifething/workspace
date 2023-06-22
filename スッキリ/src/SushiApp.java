@@ -17,6 +17,7 @@ public class SushiApp {
 			}
 			data.add(input);
 		}
+		
 		System.out.println(data);
 		System.out.printf("%d皿（%d円）%n",data.size(),data.size()*100);
 		Set<String> set = new HashSet<>(data);
